@@ -7,22 +7,22 @@ import c4 from '../assets/img/certificates/c4.jpg';
 import c5 from '../assets/img/certificates/c5.jpg';
 
 export const personalInfo = {
-  name: 'Aqiilah Cahy',
-  title: 'Full Stack Developer & UI Designer',
-  tagline: 'Membangun pengalaman digital yang luar biasa',
+  name: 'Aqiilah Cahya Ningrum',
+  title: 'Junior IT | Web Development & System Support',
+  tagline: 'Turning ideas into reliable and scalable software solutions.',
   bio: `I am passionate about building and improving digital solutions that are efficient, reliable, and user-focused. This portfolio showcases projects that reflect my ability to learn quickly, adapt, and solve problems effectively.`,
   email: 'cahyaaqiilah@gmail.com',
   phone: '083111535157',
-  location: 'Jakarta, Indonesia',
+  location: 'Medan, Indonesia',
   avatar: avatarImg,
 };
 
 export const skills: Skill[] = [
-  { name: 'React / Next.js', icon: '⚛️', level: 95 },
-  { name: 'TypeScript', icon: '📘', level: 90 },
+  { name: 'React / Next.js', icon: '⚛️', level: 85 },
+  { name: 'TypeScript', icon: '📘', level: 70 },
   { name: 'Node.js', icon: '🟢', level: 88 },
   { name: 'Python', icon: '🐍', level: 85 },
-  { name: 'UI/UX Design', icon: '🎨', level: 92 },
+  { name: 'UI/UX Design', icon: '🎨', level: 85 },
   { name: 'Cloud Architecture', icon: '☁️', level: 80 },
   { name: 'Database Design', icon: '🗄️', level: 87 },
   { name: 'DevOps', icon: '🔧', level: 75 },
