@@ -4,7 +4,7 @@ import { useThemeStore } from '../store/theme';
 import { personalInfo } from '../data/portfolio';
 import React from 'react';
 const roles = [
-  'Full Stack Developer',
+  'Junior IT',
   'UI/UX Designer',
   'Problem Solver',
   'Tech Enthusiast'
