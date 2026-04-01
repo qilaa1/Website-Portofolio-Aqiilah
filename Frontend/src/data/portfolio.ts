@@ -7,7 +7,7 @@ import c4 from '../assets/img/certificates/c4.jpg';
 import c5 from '../assets/img/certificates/c5.jpg';
 
 export const personalInfo = {
-  name: 'Aqiilah Cahya N',
+  name: 'Aqiilah Cahya NINGRUM',
   title: 'Full Stack Developer & UI Designer',
   tagline: 'Membangun pengalaman digital yang luar biasa',
   bio: `I am passionate about building and improving digital solutions that are efficient, reliable, and user-focused. This portfolio showcases projects that reflect my ability to learn quickly, adapt, and solve problems effectively.`,
