@@ -1,0 +1,10 @@
+# dependencies
+node_modules
+Frontend/node_modules
+
+# build output
+dist
+Frontend/dist
+
+# editor
+.vscode
