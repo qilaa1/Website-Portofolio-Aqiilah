@@ -1,0 +1,40 @@
+export interface Project {
+    id: string;
+    title: string;
+    description: string;
+    thumbnail: string;
+    videos: string[];
+    technologies: string[];
+    documentationUrl?: string;
+    features: string[];
+  }
+  
+  export interface Certificate {
+    id: string;
+    title: string;
+    issuer: string;
+    date: string;
+    category: CertificateCategory;
+    imageUrl: string;
+    credentialUrl?: string;
+  }
+  
+  export type CertificateCategory = 
+    | 'all'
+    | 'programming'
+    | 'design'
+    | 'marketing'
+    | 'data'
+    | 'cloud';
+  
+  export interface Skill {
+    name: string;
+    icon: string;
+    level: number;
+  }
+  
+  export interface SocialLink {
+    name: string;
+    url: string;
+    icon: string;
+  }
