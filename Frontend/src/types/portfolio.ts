@@ -33,6 +33,7 @@ export interface Project {
     level: number;
   }
   
+  
   export interface SocialLink {
     name: string;
     url: string;

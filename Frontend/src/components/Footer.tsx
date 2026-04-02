@@ -22,10 +22,10 @@ export default function Footer() {
               onClick={() => scrollTo('home')}
               className="text-2xl font-bold text-[#1a202c] dark:text-white mb-4"
             >
-              <span className="text-[#0066cc]">R</span>izki
+              <span className="text-[#0066cc]">Q</span>ila
             </motion.button>
             <p className="text-[#64748b] dark:text-gray-400 text-sm">
-              Membangun pengalaman digital yang luar biasa.
+            Turning ideas into reliable and scalable software solutions.
             </p>
           </div>
 

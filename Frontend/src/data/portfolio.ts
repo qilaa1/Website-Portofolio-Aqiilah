@@ -1,4 +1,5 @@
 import { Project, Certificate, Skill, SocialLink, CertificateCategory } from '../types/portfolio';
+
 import avatarImg from '../assets/img/qila.jpg';
 import c1 from '../assets/img/certificates/c1.jpg';
 import c2 from '../assets/img/certificates/c2.jpg';
@@ -10,7 +11,7 @@ export const personalInfo = {
   name: 'Aqiilah Cahya Ningrum',
   title: 'Junior IT | Web Development & System Support',
   tagline: 'Turning ideas into reliable and scalable software solutions.',
-  bio: `I am passionate about building and improving digital solutions that are efficient, reliable, and user-focused. This portfolio showcases projects that reflect my ability to learn quickly, adapt, and solve problems effectively.`,
+  bio: `I am passionate about building and improving digital solutions that are efficient, reliable, and user-focused.`,
   email: 'cahyaaqiilah@gmail.com',
   phone: '083111535157',
   location: 'Medan, Indonesia',
@@ -18,23 +19,21 @@ export const personalInfo = {
 };
 
 export const skills: Skill[] = [
-  { name: 'React / Next.js', icon: '⚛️', level: 85 },
-  { name: 'TypeScript', icon: '📘', level: 70 },
-  { name: 'Node.js', icon: '🟢', level: 88 },
-  { name: 'Python', icon: '🐍', level: 85 },
-  { name: 'UI/UX Design', icon: '🎨', level: 85 },
-  { name: 'Cloud Architecture', icon: '☁️', level: 80 },
-  { name: 'Database Design', icon: '🗄️', level: 87 },
-  { name: 'DevOps', icon: '🔧', level: 75 },
+  { name: 'React', icon: 'react', level: 85 },
+  { name: 'TypeScript', icon: 'ts', level: 70 },
+  { name: 'Node.js', icon: 'node', level: 88 },
+  { name: 'Python', icon: 'python', level: 85 },
+  { name: 'UI/UX Design', icon: 'design', level: 85 },
+  { name: 'PHP', icon: 'php', level: 80 },
+  { name: 'Database', icon: 'db', level: 87 },
+  { name: 'DevOps', icon: 'devops', level: 75 },
 ];
 
 export const socialLinks: SocialLink[] = [
-  { name: 'GitHub', url: 'https://github.com', icon: 'github' },
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'linkedin' },
-  { name: 'Twitter', url: 'https://twitter.com', icon: 'twitter' },
-  { name: 'Instagram', url: 'https://instagram.com', icon: 'instagram' },
+  { name: 'GitHub', url: 'https://github.com/qilaa1', icon: 'github' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/aqiilahningrum/', icon: 'linkedin' },
+  { name: 'Instagram', url: 'https://www.instagram.com/aqilachyn', icon: 'instagram' },
 ];
-
 export const projects: Project[] = [
   {
     id: '1',

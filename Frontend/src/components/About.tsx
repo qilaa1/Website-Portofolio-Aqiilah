@@ -2,8 +2,33 @@ import { motion } from 'framer-motion';
 import { useThemeStore } from '../store/theme';
 import { personalInfo, skills } from '../data/portfolio';
 import React from 'react';
+// ICONS
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaPython, 
+  FaPhp, 
+  FaDatabase 
+} from "react-icons/fa";
+
+import { SiTypescript } from "react-icons/si";
+import { MdDesignServices } from "react-icons/md";
+import { FaTools } from "react-icons/fa";
+
 export default function About() {
   const { isDark } = useThemeStore();
+
+  // 🔥 ICON MAPPING
+  const iconMap: any = {
+    react: <FaReact className="text-cyan-400 text-2xl" />,
+    ts: <SiTypescript className="text-blue-500 text-2xl" />,
+    node: <FaNodeJs className="text-green-500 text-2xl" />,
+    python: <FaPython className="text-yellow-400 text-2xl" />,
+    php: <FaPhp className="text-[#777BB4] text-2xl" />,
+    db: <FaDatabase className="text-gray-400 text-2xl" />,
+    design: <MdDesignServices className="text-pink-400 text-2xl" />,
+    devops: <FaTools className="text-orange-400 text-2xl" />,
+  };
 
   return (
     <section id="about" className="min-h-screen py-24 px-6 bg-gray-50 dark:bg-[#0f0f1a] transition-colors duration-300">
@@ -108,34 +133,39 @@ export default function About() {
           className="mt-16"
         >
           <h3 className="text-2xl font-bold text-center mb-8 text-[#1a202c] dark:text-white">Keahlian</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ scale: 1.03 }}
-                className="bg-white dark:bg-[#1a1a2e] rounded-xl p-5 cursor-default shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-2xl">{skill.icon}</span>
-                  <span className="font-medium text-[#1a202c] dark:text-white">{skill.name}</span>
-                </div>
-                <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
-                    className="h-full bg-gradient-to-r from-[#0066cc] to-[#0088ff] rounded-full"
-                  />
-                </div>
-                <span className="text-xs text-[#64748b] dark:text-gray-500 mt-2 block">{skill.level}%</span>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white dark:bg-[#1a1a2e] p-5 rounded-xl shadow border"
+            >
+              {/* ICON */}
+              <div className="flex items-center gap-3 mb-3">
+                <span>
+                  {iconMap[skill.icon] || skill.icon}
+                </span>
+                <span className="font-medium">{skill.name}</span>
+              </div>
+
+              {/* PROGRESS */}
+              <div className="h-2 bg-gray-200 rounded">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  transition={{ duration: 1 }}
+                  className="h-full bg-blue-500 rounded"
+                />
+              </div>
+
+              <span className="text-xs mt-2 block">
+                {skill.level}%
+              </span>
+            </motion.div>
+          ))}
+        </div>
         </motion.div>
       </div>
     </section>
