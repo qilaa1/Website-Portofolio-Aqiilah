@@ -1,14 +1,14 @@
 export interface Project {
-    id: string;
-    title: string;
-    description: string;
-    thumbnail: string;
-    videos: string[];
-    technologies: string[];
-    documentationUrl?: string;
-    features: string[];
-  }
-  
+  id: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+  videoUrls?: string[];     // MP4 langsung
+  videoEmbeds?: string[];   // YouTube iframe
+  technologies: string[];
+  documentationUrl: string;
+  features: string[];
+}
   export interface Certificate {
     id: string;
     title: string;
@@ -32,7 +32,6 @@ export interface Project {
     icon: string;
     level: number;
   }
-  
   
   export interface SocialLink {
     name: string;

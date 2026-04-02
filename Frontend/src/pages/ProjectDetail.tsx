@@ -74,58 +74,40 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
             />
           </div>
         </motion.div>
+{/* Video Section */}
+{(project.videoUrls?.length || project.videoEmbeds?.length) && (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3 }}
+    className="mb-12"
+  >
+    <h2 className="text-2xl font-bold text-[#1a202c] dark:text-white mb-6">Video Demonstrasi</h2>
 
-        {/* Video Section */}
-        {project.videos.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mb-12"
-          >
-            <h2 className="text-2xl font-bold text-[#1a202c] dark:text-white mb-6">Video Demonstrasi</h2>
-            
-            <div className="relative aspect-video bg-gray-900 dark:bg-black rounded-2xl overflow-hidden mb-4">
-              <video
-                key={currentVideo}
-                controls
-                autoPlay
-                className="w-full h-full object-contain"
-                src={project.videos[currentVideo]}
-              >
-                Browser tidak mendukung video.
-              </video>
-            </div>
+    {/* MP4 Videos */}
+    {project.videoUrls?.map((url, index) => (
+      <div key={index} className="relative aspect-video bg-gray-900 dark:bg-black rounded-2xl overflow-hidden mb-4">
+        <video controls className="w-full h-full object-contain" src={url}>
+          Browser tidak mendukung video.
+        </video>
+      </div>
+    ))}
 
-            {project.videos.length > 1 && (
-              <div className="flex gap-3 overflow-x-auto pb-2">
-                {project.videos.map((video, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentVideo(index)}
-                    className={`flex-shrink-0 w-40 h-24 rounded-lg overflow-hidden border-2 transition-colors ${
-                      currentVideo === index 
-                        ? 'border-[#0066cc]' 
-                        : 'border-transparent hover:border-gray-300 dark:hover:border-gray-700'
-                    }`}
-                  >
-                    <div className="w-full h-full bg-gray-800 dark:bg-[#1a1a2e] flex items-center justify-center">
-                      <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <span className="text-xs text-white bg-black/50 absolute bottom-2 left-2 px-2 py-1 rounded">
-                      Video {index + 1}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </motion.div>
-        )}
-
+    {/* YouTube Embeds */}
+    {project.videoEmbeds?.map((embed, index) => (
+      <div key={index} className="relative aspect-video bg-gray-900 dark:bg-black rounded-2xl overflow-hidden mb-4">
+        <iframe
+          className="w-full h-full"
+          src={embed}
+          title={`Video Embed ${index + 1}`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
+    ))}
+  </motion.div>
+)}
         {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

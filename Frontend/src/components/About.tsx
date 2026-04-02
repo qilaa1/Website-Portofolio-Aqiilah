@@ -140,7 +140,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white dark:bg-[#1a1a2e] p-5 rounded-xl shadow border"
+              className="text-sm text-[#64748b] dark:text-gray-400 bg-white dark:bg-[#1a1a2e] p-5 rounded-xl shadow border"
             >
               {/* ICON */}
               <div className="flex items-center gap-3 mb-3">
