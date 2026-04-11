@@ -29,8 +29,6 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: '4f56ce7a-2b74-4b7d-a506-f311fc585af6', // User needs to get their own key
-          to: personalInfo.email,
-          from: formData.email,
           name: formData.name,
           subject: `Portfolio Contact: Pesan dari ${formData.name}`,
           message: `Nama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}`,
