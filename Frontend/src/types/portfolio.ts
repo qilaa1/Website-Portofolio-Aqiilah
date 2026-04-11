@@ -43,6 +43,7 @@ export type Item = Project | Publication;
     name: string;
     icon: string;
     level: number;
+    category: 'technical' | 'tools' | 'soft';
   }
   
   export interface SocialLink {

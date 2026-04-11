@@ -30,14 +30,32 @@ export const personalInfo = {
 };
 
 /* ================= SKILLS ================= */
-export const skills: Skill[] = [
-  { name: 'React', icon: 'react', level: 85 },
-  { name: 'TypeScript', icon: 'ts', level: 60 },
-  { name: 'Python', icon: 'python', level: 70 },
-  { name: 'UI/UX Design', icon: 'design', level: 85 },
-  { name: 'PHP', icon: 'php', level: 80 },
-  { name: 'Database', icon: 'db', level: 70 },
-];
+/* ================= SKILLS ================= */
+export const skills = {
+  technical: [
+    { name: 'React', icon: 'react', level: 85 },
+    { name: 'TypeScript', icon: 'ts', level: 60 },
+    { name: 'Python', icon: 'python', level: 70 },
+    { name: 'PHP', icon: 'php', level: 80 },
+    { name: 'Database', icon: 'db', level: 70 },
+  ],
+
+  tools: [
+    { name: 'Microsoft Word', icon: 'word', level: 90 },
+    { name: 'Microsoft Excel', icon: 'excel', level: 80 },
+    { name: 'Microsoft PowerPoint', icon: 'ppt', level: 85 },
+    { name: 'Figma', icon: 'figma', level: 85 },
+    { name: 'Git & GitHub', icon: 'git', level: 75 },
+  ],
+
+  soft: [
+    { name: 'Problem Solving', icon: 'brain', level: 90 },
+    { name: 'Critical Thinking', icon: 'thinking', level: 85 },
+    { name: 'Communication', icon: 'chat', level: 80 },
+    { name: 'Teamwork', icon: 'team', level: 85 },
+    { name: 'Time Management', icon: 'time', level: 80 },
+  ]
+};
 
 /* ================= SOCIAL ================= */
 export const socialLinks: SocialLink[] = [
