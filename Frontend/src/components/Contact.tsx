@@ -75,7 +75,7 @@ export default function Contact() {
           <span className="text-[#0066cc] font-medium text-lg">Kontak</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 text-[#1a202c] dark:text-white">Hubungi Saya</h2>
           <p className="text-[#64748b] dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-            Punya proyek menarik? Mari diskusikan bagaimana saya bisa membantu Anda.
+            Ingin kenal saya lebih jauh? Silahkan isi form dibawah ini.
           </p>
         </motion.div>
 
@@ -201,7 +201,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white dark:bg-[#2a2a4a] border border-gray-200 dark:border-gray-700 rounded-xl text-[#1a202c] dark:text-white placeholder-[#64748b] dark:placeholder-gray-500 focus:outline-none focus:border-[#0066cc] transition-colors"
-                  placeholder="John Doe"
+                  placeholder="Type Here..."
                 />
               </div>
 
@@ -217,7 +217,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white dark:bg-[#2a2a4a] border border-gray-200 dark:border-gray-700 rounded-xl text-[#1a202c] dark:text-white placeholder-[#64748b] dark:placeholder-gray-500 focus:outline-none focus:border-[#0066cc] transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="qila@example.com"
                 />
               </div>
 
@@ -233,7 +233,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 bg-white dark:bg-[#2a2a4a] border border-gray-200 dark:border-gray-700 rounded-xl text-[#1a202c] dark:text-white placeholder-[#64748b] dark:placeholder-gray-500 focus:outline-none focus:border-[#0066cc] transition-colors resize-none"
-                  placeholder="Ceritakan proyek Anda..."
+                  placeholder="Type Here..."
                 />
               </div>
 
