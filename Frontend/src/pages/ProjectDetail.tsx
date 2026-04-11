@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useThemeStore } from '../store/theme';
-import { projects } from '../data/portfolio';
+import { allItems, Item } from '../data/portfolio';
 import React from 'react';
 
 interface ProjectDetailProps {
@@ -11,10 +11,10 @@ interface ProjectDetailProps {
 
 export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
   const { isDark } = useThemeStore();
-  const project = projects.find(p => p.id === projectId);
+  const item = allItems.find((p: Item) => p.id === projectId);
   const [currentVideo, setCurrentVideo] = useState(0);
 
-  if (!project) {
+  if (!item) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0f0f1a]">
         <p className="text-[#64748b] dark:text-gray-400">Proyek tidak ditemukan</p>
@@ -45,10 +45,11 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
           transition={{ delay: 0.1 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-[#1a202c] dark:text-white mb-4">
-            {project.title}
+            {item.title}
           </h1>
           <div className="flex flex-wrap gap-3 mb-8">
-            {project.technologies.map((tech) => (
+            {'technologies' in item &&
+              item.technologies.map((tech) => (
               <span
                 key={tech}
                 className="text-sm bg-blue-50 dark:bg-[#0066cc]/20 text-[#0066cc] dark:text-[#0088ff] px-4 py-1.5 rounded-full font-medium"
@@ -56,6 +57,11 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                 {tech}
               </span>
             ))}
+            {'publisher' in item && (
+              <span className="text-sm bg-blue-50 dark:bg-[#0066cc]/20 text-[#0066cc] dark:text-[#0088ff] px-4 py-1.5 rounded-full font-medium">
+                {item.publisher[0]}
+              </span>
+            )}
           </div>
         </motion.div>
 
@@ -68,14 +74,14 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
         >
           <div className="relative aspect-video bg-gray-100 dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg">
             <img
-              src={project.thumbnail}
-              alt={project.title}
+              src={item.thumbnail}
+              alt={item.title}
               className="w-full h-full object-cover"
             />
           </div>
         </motion.div>
 {/* Video Section */}
-{(project.videoUrls?.length || project.videoEmbeds?.length) && (
+{'videoEmbeds' in item && item.videoEmbeds?.length ? (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -85,16 +91,18 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
     <h2 className="text-2xl font-bold text-[#1a202c] dark:text-white mb-6">Video Demonstrasi</h2>
 
     {/* MP4 Videos */}
-    {project.videoUrls?.map((url, index) => (
+    {item.videoUrls?.map((url, index) => (
       <div key={index} className="relative aspect-video bg-gray-900 dark:bg-black rounded-2xl overflow-hidden mb-4">
         <video controls className="w-full h-full object-contain" src={url}>
           Browser tidak mendukung video.
         </video>
+        
       </div>
+      
     ))}
 
     {/* YouTube Embeds */}
-    {project.videoEmbeds?.map((embed, index) => (
+    {item.videoEmbeds?.map((embed, index) => (
       <div key={index} className="relative aspect-video bg-gray-900 dark:bg-black rounded-2xl overflow-hidden mb-4">
         <iframe
           className="w-full h-full"
@@ -103,11 +111,16 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-        ></iframe>
+          
+        >
+          
+        </iframe>
       </div>
+      
     ))}
   </motion.div>
-)}
+):null}
+
         {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -117,12 +130,14 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
         >
           <h2 className="text-2xl font-bold text-[#1a202c] dark:text-white mb-4">Deskripsi Proyek</h2>
           <p className="text-[#64748b] dark:text-gray-400 text-lg leading-relaxed">
-            {project.description}
+            {item.description}
           </p>
         </motion.div>
 
         {/* Features */}
+        {'features' in item && (
         <motion.div
+        
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -130,7 +145,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
         >
           <h2 className="text-2xl font-bold text-[#1a202c] dark:text-white mb-6">Fitur Utama</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {project.features.map((feature, index) => (
+            {item.features.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
@@ -148,9 +163,9 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
             ))}
           </div>
         </motion.div>
-
+        )}
         {/* Download Documentation */}
-        {project.documentationUrl && (
+        {'documentationUrl' in item && item.documentationUrl && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -159,7 +174,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
           >
             <h2 className="text-2xl font-bold text-[#1a202c] dark:text-white mb-6">Dokumentasi</h2>
             <motion.a
-              href={project.documentationUrl}
+              href={item.documentationUrl}
               download
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
