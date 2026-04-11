@@ -93,9 +93,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-lg text-[#64748b] dark:text-gray-400 max-w-2xl mx-auto mb-10"
-        >
+          className="text-lg text-[#64748b] dark:text-gray-400 max-w-2xl mx-auto mb-10 whitespace-pre-line">
+
           {personalInfo.tagline}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-lg text-[#64748b] dark:text-gray-400 max-w-2xl mx-auto mb-10 whitespace-pre-line">
+
+          {personalInfo.tagline2}
         </motion.p>
 
         <motion.div

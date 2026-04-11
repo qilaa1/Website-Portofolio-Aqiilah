@@ -21,7 +21,8 @@ import p1 from '../assets/project/p1.pdf';
 export const personalInfo = {
   name: 'Aqiilah Cahya Ningrum',
   title: 'Junior IT | Web Development & System Support',
-  tagline: 'Turning ideas into reliable and scalable software solutions.',
+  tagline: 'Turning ideas into reliable and scalable software solutions',
+  tagline2:'🚀 This portfolio is a work in progress — more exciting projects coming soon!',
   bio: `I am passionate about building and improving digital solutions that are efficient, reliable, and user-focused.`,
   email: 'cahyaaqiilah@gmail.com',
   phone: '083111535157',
