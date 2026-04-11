@@ -28,7 +28,7 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY_HERE', // User needs to get their own key
+          access_key: '4f56ce7a-2b74-4b7d-a506-f311fc585af6', // User needs to get their own key
           to: personalInfo.email,
           from: formData.email,
           name: formData.name,
