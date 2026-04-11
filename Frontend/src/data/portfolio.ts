@@ -1,7 +1,7 @@
 import {
   Project,
   Certificate,
-  Skill,
+  SkillGroup,
   SocialLink,
   CertificateCategory,
   Publication,
@@ -30,8 +30,7 @@ export const personalInfo = {
 };
 
 /* ================= SKILLS ================= */
-/* ================= SKILLS ================= */
-export const skills = {
+export const skills: SkillGroup = {
   technical: [
     { name: 'React', icon: 'react', level: 85 },
     { name: 'TypeScript', icon: 'ts', level: 60 },
@@ -43,20 +42,19 @@ export const skills = {
   tools: [
     { name: 'Microsoft Word', icon: 'word', level: 90 },
     { name: 'Microsoft Excel', icon: 'excel', level: 80 },
-    { name: 'Microsoft PowerPoint', icon: 'ppt', level: 85 },
-    { name: 'Figma', icon: 'figma', level: 85 },
-    { name: 'Git & GitHub', icon: 'git', level: 75 },
+    { name: 'PowerPoint', icon: 'ppt', level: 85 },
+    { name: 'Figma', icon: 'design', level: 85 },
+    { name: 'Git & GitHub', icon: 'devops', level: 75 },
   ],
 
   soft: [
     { name: 'Problem Solving', icon: 'brain', level: 90 },
     { name: 'Critical Thinking', icon: 'thinking', level: 85 },
-    { name: 'Communication', icon: 'chat', level: 80 },
-    { name: 'Teamwork', icon: 'team', level: 85 },
+    { name: 'Communication', icon: 'chat', level: 85 },
+    { name: 'Teamwork', icon: 'team', level: 90 },
     { name: 'Time Management', icon: 'time', level: 80 },
   ]
 };
-
 /* ================= SOCIAL ================= */
 export const socialLinks: SocialLink[] = [
   { name: 'GitHub', url: 'https://github.com/qilaa1', icon: 'github' },

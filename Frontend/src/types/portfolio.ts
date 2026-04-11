@@ -39,12 +39,19 @@ export type Item = Project | Publication;
     | 'design'
     | 'training';
   
-  export interface Skill {
-    name: string;
-    icon: string;
-    level: number;
-    category: 'technical' | 'tools' | 'soft';
-  }
+// 🔥 TYPE SKILL
+export interface Skill {
+  name: string;
+  icon: string;
+  level: number;
+}
+
+// 🔥 TYPE GROUP SKILL
+export interface SkillGroup {
+  technical: Skill[];
+  tools: Skill[];
+  soft: Skill[];
+}
   
   export interface SocialLink {
     name: string;
