@@ -8,3 +8,6 @@ Frontend/dist
 
 # editor
 .vscode
+
+#env
+.env

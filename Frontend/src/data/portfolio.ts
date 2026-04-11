@@ -13,7 +13,9 @@ import c2 from '../assets/img/certificates/c2.jpg';
 import c3 from '../assets/img/certificates/c3.jpg';
 import c4 from '../assets/img/certificates/c4.jpg';
 import c5 from '../assets/img/certificates/c5.jpg';
-import c6 from '../assets/img/certificates/C6.png';
+import c6 from '../assets/project/p3.jpg';
+import c7 from '../assets/project/p2.jpg';
+import p1 from '../assets/project/p1.pdf';
 
 /* ================= PERSONAL ================= */
 export const personalInfo = {
@@ -49,12 +51,13 @@ export const projects: Project[] = [
   {
     id: 'project-1',
     type: 'project',
+    types: 'Chatbot AI',
     title: 'Tiktok Bot Automation',
     description: 'Automasi TikTok berbasis AI',
     thumbnail: c6,
     videoEmbeds: ['https://www.youtube.com/embed/FO2tPbB5SUo'],
     technologies: ['Python', 'Selenium', 'Javascript'],
-    documentationUrl: '/docs/doc.pdf',
+    documentationUrl: 'https://github.com/qilaa1/Chatbot-Tiktok-',
     features: ['Chatbot', 'Auto Reply'],
   },
 ];
@@ -66,8 +69,9 @@ export const publications: Publication[] = [
     type: 'publication',
     title: 'Journal BERT TikTok',
     description: 'Publish Journal',
-    thumbnail: c6,
+    thumbnail: c7,
     publisher: ['Univrab'],
+    documentationUrl: p1,
     types: 'Journal',
   },
 ];
@@ -81,11 +85,9 @@ export const allItems: Item[] = [...projects, ...publications];
 /* ================= CERTIFICATE ================= */
 export const certificateCategories: { id: CertificateCategory; label: string; icon: string }[] = [
   { id: 'all', label: 'Semua', icon: '🏆' },
-  { id: 'programming', label: 'Pemrograman', icon: '💻' },
+  { id: 'experience', label: 'Program & Experience', icon: '🚀' },
   { id: 'design', label: 'Desain', icon: '🎨' },
-  { id: 'marketing', label: 'Pemasaran', icon: '📈' },
-  { id: 'data', label: 'Data & AI', icon: '🤖' },
-  { id: 'cloud', label: 'Cloud & DevOps', icon: '☁️' },
+  { id: 'training', label: 'Training & Seminar', icon: '🎓' }
 ];
 
 export const certificates: Certificate[] = [
@@ -94,15 +96,15 @@ export const certificates: Certificate[] = [
     title: 'Pertukaran Mahasiswa Merdeka Batch 3 (PMM)',
     issuer: 'Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi',
     date: '2024',
-    category: 'all',
+    category: 'experience',
     imageUrl: c1,
   },
   {
     id: 'c2',
-    title: 'Magang dan Studi Independen Angkatan 6 (MSIB)',
+    title: 'Studi Independen',
     issuer: 'Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi',
     date: '2024',
-    category: 'programming',
+    category: 'experience',
     imageUrl: c2,
   },
   {
@@ -110,7 +112,7 @@ export const certificates: Certificate[] = [
     title: 'Magang Merdeka',
     issuer: 'Infinite Learning Indonesia',
     date: '2024',
-    category: 'programming',
+    category: 'experience',
     imageUrl: c3,
   },
   {
@@ -118,7 +120,7 @@ export const certificates: Certificate[] = [
     title: 'Fasilitator Pembelajaran Digital',
     issuer: 'Universitas Malikussaleh',
     date: '2024',
-    category: 'all',
+    category: 'training',
     imageUrl: c4,
   },
   {
@@ -126,7 +128,7 @@ export const certificates: Certificate[] = [
     title: 'MMS Future Leaders Program',
     issuer: 'Mutiara Mutu Sertifikasi',
     date: '2025',
-    category: 'all',
+    category: 'training',
     imageUrl: c5,
   },
 ];

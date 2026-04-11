@@ -1,6 +1,7 @@
 export interface Project {
   id: string;
   type: 'project'; 
+  types: string; 
   title: string;
   description: string;
   thumbnail: string;
@@ -17,6 +18,7 @@ export interface Publication {
   description: string;
   thumbnail: string; 
   publisher: string[];
+  documentationUrl: string;
   types: string;
 }
 export type Item = Project | Publication;
@@ -33,11 +35,9 @@ export type Item = Project | Publication;
   
   export type CertificateCategory = 
     | 'all'
-    | 'programming'
+    | 'experience'
     | 'design'
-    | 'marketing'
-    | 'data'
-    | 'cloud';
+    | 'training';
   
   export interface Skill {
     name: string;

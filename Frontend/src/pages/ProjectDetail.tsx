@@ -13,6 +13,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
   const { isDark } = useThemeStore();
   const item = allItems.find((p: Item) => p.id === projectId);
   const [currentVideo, setCurrentVideo] = useState(0);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   if (!item) {
     return (
@@ -59,27 +60,51 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
             ))}
             {'publisher' in item && (
               <span className="text-sm bg-blue-50 dark:bg-[#0066cc]/20 text-[#0066cc] dark:text-[#0088ff] px-4 py-1.5 rounded-full font-medium">
-                {item.publisher[0]}
+                {item.types}
               </span>
             )}
           </div>
         </motion.div>
 
-        {/* Main Image/Video */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-12"
-        >
-          <div className="relative aspect-video bg-gray-100 dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src={item.thumbnail}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
+      {/* Main Image/Video */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2 }}
+  className="mb-12"
+>
+  <div
+    className="relative aspect-video bg-gray-100 dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+    onClick={() => setPreviewImage(item.thumbnail)}
+  >
+    <img
+      src={item.thumbnail}
+      alt={item.title}
+      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+    />
+  </div>
+</motion.div>
+{/* IMAGE PREVIEW MODAL */}
+{previewImage && (
+  <div
+    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+    onClick={() => setPreviewImage(null)}
+  >
+    <img
+      src={previewImage}
+      alt="Preview"
+      className="max-w-full max-h-full object-contain p-4"
+    />
+
+    {/* Close Button */}
+    <button
+      onClick={() => setPreviewImage(null)}
+      className="absolute top-6 right-6 text-white text-3xl font-bold"
+    >
+      ✕
+    </button>
+  </div>
+)}
 {/* Video Section */}
 {'videoEmbeds' in item && item.videoEmbeds?.length ? (
   <motion.div

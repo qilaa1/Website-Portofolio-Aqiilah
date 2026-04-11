@@ -79,8 +79,8 @@ export default function Projects({ onProjectClick }: ProjectsProps) {
                 <div className="absolute bottom-4 left-4">
                   <span className="text-xs bg-white/90 dark:bg-[#0066cc] text-[#0066cc] dark:text-white px-3 py-1 rounded-full font-medium">
                     {item.type === 'project'
-                      ? item.technologies[0]
-                      : item.publisher[0]}
+                      ? item.types
+                      : item.types}
                   </span>
                 </div>
               </div>

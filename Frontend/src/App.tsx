@@ -15,6 +15,7 @@ function App() {
   const [currentSection, setCurrentSection] = useState('home');
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
+  // DARK MODE
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
@@ -23,35 +24,72 @@ function App() {
     }
   }, [isDark]);
 
+  // 🔥 FIX NAVIGATION (MOBILE + DESKTOP)
   const handleNavigate = (section: string) => {
     setCurrentSection(section);
     setSelectedProjectId(null);
+
     const element = document.getElementById(section);
-    element?.scrollIntoView({ behavior: 'smooth' });
+
+    if (element) {
+      const yOffset = -80; // tinggi navbar (adjust kalau perlu)
+      const y =
+        element.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      // ✅ pakai requestAnimationFrame biar smooth & no warning
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    }
   };
 
+  // CLICK PROJECT
   const handleProjectClick = (projectId: string) => {
     setSelectedProjectId(projectId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   };
 
+  // BACK KE LIST PROJECT
   const handleBackToProjects = () => {
     setSelectedProjectId(null);
+
     const element = document.getElementById('projects');
-    element?.scrollIntoView({ behavior: 'smooth' });
+
+    if (element) {
+      const yOffset = -80;
+      const y =
+        element.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    }
   };
 
+  // 🔥 SCROLL SPY (DETECT SECTION)
   useEffect(() => {
     const handleScroll = () => {
       if (selectedProjectId) return;
+
       const sections = ['home', 'about', 'projects', 'certificates', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setCurrentSection(section);
             break;
           }
@@ -66,11 +104,13 @@ function App() {
   return (
     <div className={isDark ? 'dark' : ''}>
       <div className="min-h-screen bg-white dark:bg-[#0f0f1a] transition-colors duration-300">
+
         <Navbar currentSection={currentSection} onNavigate={handleNavigate} />
+
         {selectedProjectId ? (
-          <ProjectDetail 
-            projectId={selectedProjectId} 
-            onBack={handleBackToProjects} 
+          <ProjectDetail
+            projectId={selectedProjectId}
+            onBack={handleBackToProjects}
           />
         ) : (
           <>
@@ -81,6 +121,7 @@ function App() {
             <Contact />
           </>
         )}
+
         <Footer />
       </div>
     </div>
