@@ -13,9 +13,11 @@ import c2 from '../assets/img/certificates/c2.jpg';
 import c3 from '../assets/img/certificates/c3.jpg';
 import c4 from '../assets/img/certificates/c4.jpg';
 import c5 from '../assets/img/certificates/c5.jpg';
+import p2 from '../assets/project/p4.jpg';
 import c6 from '../assets/project/p3.jpg';
 import c7 from '../assets/project/p2.jpg';
 import p1 from '../assets/project/p1.pdf';
+
 
 /* ================= PERSONAL ================= */
 export const personalInfo = {
@@ -75,6 +77,17 @@ export const projects: Project[] = [
     videoEmbeds: ['https://www.youtube.com/embed/FO2tPbB5SUo'],
     technologies: ['Python', 'Selenium', 'Javascript'],
     documentationUrl: 'https://github.com/qilaa1/Chatbot-Tiktok-',
+    features: ['Chatbot', 'Auto Reply'],
+  },
+  {
+    id: 'project-2',
+    type: 'project',
+    types: 'Web',
+    title: 'Web Pemangkasan Pohon',
+    description: 'Pemangkasan Pohon dengan Metode ROW',
+    thumbnail: p2,
+    technologies: ['ROW', 'TypeScript', 'Javascript'],
+    documentationUrl: '-',
     features: ['Chatbot', 'Auto Reply'],
   },
 ];
