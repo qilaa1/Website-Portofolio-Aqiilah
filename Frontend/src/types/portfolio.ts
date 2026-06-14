@@ -43,7 +43,6 @@ export type Item = Project | Publication;
 export interface Skill {
   name: string;
   icon: string;
-  level: number;
 }
 
 // 🔥 TYPE GROUP SKILL

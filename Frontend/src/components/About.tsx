@@ -61,19 +61,6 @@ export default function About() {
             </span>
           </div>
 
-          {/* PROGRESS BAR */}
-          <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: `${skill.level}%` }}
-              transition={{ duration: 1 }}
-              className="h-full bg-gradient-to-r from-[#0066cc] to-[#0088ff] rounded"
-            />
-          </div>
-
-          <span className="text-xs mt-2 block text-[#64748b] dark:text-gray-400">
-            {skill.level}%
-          </span>
         </motion.div>
       ))}
     </div>

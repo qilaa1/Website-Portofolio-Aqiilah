@@ -11,3 +11,7 @@ Frontend/dist
 
 #env
 .env
+
+#backup
+aboutskillvl.tsx
+Frontend/components/aboutskillvl.tsx
