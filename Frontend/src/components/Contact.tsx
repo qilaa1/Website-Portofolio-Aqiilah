@@ -119,7 +119,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-[#64748b] dark:text-gray-400">Number</p>
+                    <p className="text-sm text-[#64748b] dark:text-gray-400">Phone</p>
                     <p className="font-medium text-[#1a202c] dark:text-white">{personalInfo.phone}</p>
                   </div>
                 </motion.a>
@@ -132,7 +132,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-[#64748b] dark:text-gray-400">Lokasi</p>
+                    <p className="text-sm text-[#64748b] dark:text-gray-400">Location</p>
                     <p className="font-medium text-[#1a202c] dark:text-white">{personalInfo.location}</p>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function Contact() {
 
             {/* Social Links */}
             <div className="bg-gray-50 dark:bg-[#1a1a2e] rounded-2xl p-8 border border-gray-100 dark:border-gray-800">
-              <h3 className="text-xl font-bold mb-6 text-[#1a202c] dark:text-white">Media Sosial</h3>
+              <h3 className="text-xl font-bold mb-6 text-[#1a202c] dark:text-white">Social Media</h3>
               <div className="flex gap-4">
                 {socialLinks.map((link) => (
                   <motion.a
