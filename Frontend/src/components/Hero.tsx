@@ -5,7 +5,7 @@ import { personalInfo } from '../data/portfolio';
 import React from 'react';
 const roles = [
   'Junior IT',
-  'UI/UX Designer',
+  'Web Developer',
   'Problem Solver',
   'Tech Enthusiast'
 ];
@@ -128,22 +128,7 @@ export default function Hero() {
           >
             Hubungi Saya
           </motion.button>
-        </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-gray-300 dark:border-gray-600 rounded-full flex justify-center"
-          >
-            <motion.div className="w-1.5 h-3 bg-[#0066cc] rounded-full mt-2" />
-          </motion.div>
         </motion.div>
       </div>
     </section>

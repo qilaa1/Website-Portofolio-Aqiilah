@@ -22,16 +22,20 @@ import p1 from '../assets/project/p1.pdf';
 /* ================= PERSONAL ================= */
 export const personalInfo = {
   name: 'Aqiilah Cahya Ningrum',
-  title: 'Junior IT | Web Development & System Support',
-  tagline: 'Turning ideas into reliable and scalable software solutions',
-  tagline2:'🚀 This portfolio is a work in progress — more exciting projects coming soon!',
-  bio: `I am passionate about building and improving digital solutions that are efficient, reliable, and user-focused.`,
+
+  title: 'Web Developer | IT Support | System Support',
+
+  tagline: 'Building reliable digital solutions through modern web development and technical support.',
+
+  tagline2: '💼 Open to Web Development, IT Support, and System Support opportunities.',
+
+  bio: `Fresh graduate in Informatics with experience in web application development, system support, and database management. Passionate about solving technical problems, building reliable digital solutions, and continuously learning new technologies.`,
+
   email: 'cahyaaqiilah@gmail.com',
   phone: '083111535157',
   location: 'Medan, Indonesia',
   avatar: avatarImg,
 };
-
 /* ================= SKILLS ================= */
 export const skills: SkillGroup = {
   technical: [
