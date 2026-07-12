@@ -7,7 +7,7 @@ import {
   Publication,
 } from '../types/portfolio';
 
-import avatarImg from '../assets/img/qila.jpg';
+import avatarImg from '../assets/img/qila-1.png';
 import c1 from '../assets/img/certificates/c1.jpg';
 import c2 from '../assets/img/certificates/c2.jpg';
 import c3 from '../assets/img/certificates/c3.jpg';
