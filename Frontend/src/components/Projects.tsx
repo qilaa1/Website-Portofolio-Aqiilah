@@ -32,8 +32,7 @@ export default function Projects({ onProjectClick }: ProjectsProps) {
             Karya Terbaru
           </h2>
           <p className="text-[#64748b] dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-            Kumpulan project coding dengan demo serta publikasi jurnal dan karya lainnya.
-          </p>
+          A collection of projects, research publications, and technical achievements.          </p>
         </motion.div>
 
         {/* GRID */}

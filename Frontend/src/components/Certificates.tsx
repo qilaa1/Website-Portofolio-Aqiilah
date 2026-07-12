@@ -95,8 +95,7 @@ export default function Certificates() {
           <span className="text-[#0066cc] font-medium text-lg">Sertifikat</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 text-[#1a202c] dark:text-white">Keahlian & Kualifikasi</h2>
           <p className="text-[#64748b] dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-            Berbagai sertifikasi profesional yang telah saya raih untuk membuktikan kompetensi di bidang terkait.
-          </p>
+          Professional certifications earned through training and technical learning.          </p>
         </motion.div>
 
         {/* Category Tabs */}
