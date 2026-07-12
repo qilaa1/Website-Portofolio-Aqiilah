@@ -112,12 +112,13 @@ export const publications: Publication[] = [
   {
     id: 'publication-1',
     type: 'publication',
-    title: 'Journal BERT TikTok',
-    description: 'Publish Journal',
+    title: 'BERT-Based TikTok Comment Bot',
+    description:
+      'Published in a SINTA 3 accredited journal. This research presents the development of a TikTok comment bot using the BERT (Bidirectional Encoder Representations from Transformers) method for sentiment classification and automated responses.',
     thumbnail: c7,
-    publisher: ['Univrab'],
+    publisher: ['Universitas Riau'],
     documentationUrl: p1,
-    types: 'Journal',
+    types: 'SINTA 3 Journal',
   },
 ];
 
