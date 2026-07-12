@@ -74,14 +74,20 @@ export const projects: Project[] = [
   {
     id: 'project-1',
     type: 'project',
-    types: 'Chatbot AI',
-    title: 'Tiktok Bot Automation',
-    description: 'Automasi TikTok berbasis AI',
+    types: 'AI Automation',
+    title: 'TikTok Bot Automation',
+    description:
+      'An AI-powered TikTok automation bot that monitors comments and generates automated replies using BERT-based sentiment analysis.',
     thumbnail: c6,
     videoEmbeds: ['https://www.youtube.com/embed/FO2tPbB5SUo'],
-    technologies: ['Python', 'Selenium', 'Javascript'],
+    technologies: ['Python', 'Selenium', 'JavaScript', 'BERT'],
     documentationUrl: 'https://github.com/qilaa1/Chatbot-Tiktok-',
-    features: ['Chatbot', 'Auto Reply'],
+    features: [
+      'Comment Monitoring',
+      'Auto Reply',
+      'Sentiment Analysis',
+      'Browser Automation',
+    ],
   },
   {
     id: 'project-2',
