@@ -83,12 +83,23 @@ export const projects: Project[] = [
     id: 'project-2',
     type: 'project',
     types: 'Web',
-    title: 'Web Pemangkasan Pohon',
-    description: 'Pemangkasan Pohon dengan Metode ROW',
+    title: 'Vegetation Management System (ROW)',
+    description:
+      'Developed a custom web application for managing tree pruning activities around electricity distribution lines using the Right of Way (ROW) method. Built as a freelance client project with a focus on responsive UI and operational workflows.',
     thumbnail: p2,
-    technologies: ['ROW', 'TypeScript', 'Javascript'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'ROW',
+    ],
     documentationUrl: '-',
-    features: ['Chatbot', 'Auto Reply'],
+    features: [
+      'Responsive Interface',
+      'CRUD Management',
+      'Data Visualization',
+      'Operational Workflow',
+    ],
   },
 ];
 
