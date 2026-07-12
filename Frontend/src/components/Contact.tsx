@@ -119,7 +119,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-[#64748b] dark:text-gray-400">Telepon</p>
+                    <p className="text-sm text-[#64748b] dark:text-gray-400">Number</p>
                     <p className="font-medium text-[#1a202c] dark:text-white">{personalInfo.phone}</p>
                   </div>
                 </motion.a>
