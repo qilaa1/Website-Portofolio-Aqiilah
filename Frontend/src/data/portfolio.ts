@@ -145,7 +145,7 @@ export const certificateCategories: { id: CertificateCategory; label: string; ic
 export const certificates: Certificate[] = [
   {
     id: 'c1',
-    title: 'Student Exchanges Batch 3',
+    title: 'Student Exchange Batch 3',
     issuer: 'Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi',
     date: '2024',
     category: 'experience',
