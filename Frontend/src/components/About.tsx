@@ -30,9 +30,7 @@ export default function About() {
     devops: <FaTools className="text-orange-400 text-2xl" />,
   
     // ✅ MICROSOFT (pakai alternatif)
-    word: <FaFileWord className="text-blue-600 text-2xl" />,
-    excel: <span className="text-2xl">📊</span>,
-    ppt: <span className="text-2xl">📊</span>,
+    office: <span className="text-2xl">📊</span>,
   
     // SOFT
     brain: <span className="text-2xl">🧠</span>,

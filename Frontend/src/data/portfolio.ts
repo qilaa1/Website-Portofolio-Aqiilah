@@ -47,9 +47,7 @@ export const skills: SkillGroup = {
   ],
 
   tools: [
-    { name: 'Microsoft Word', icon: 'word' },
-    { name: 'Microsoft Excel', icon: 'excel' },
-    { name: 'PowerPoint', icon: 'ppt' },
+    { name: 'Microsoft Office', icon: 'office' },
     { name: 'Figma', icon: 'design' },
     { name: 'Git & GitHub', icon: 'devops' },
   ],
