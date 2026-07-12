@@ -13,6 +13,8 @@ import c2 from '../assets/img/certificates/c2.jpg';
 import c3 from '../assets/img/certificates/c3.jpg';
 import c4 from '../assets/img/certificates/c4.jpg';
 import c5 from '../assets/img/certificates/c5.jpg';
+import c8 from '../assets/img/certificates/c6.jpg';
+import c9 from '../assets/img/certificates/c7.jpg';
 import p2 from '../assets/project/p4.jpg';
 import c6 from '../assets/project/p3.jpg';
 import c7 from '../assets/project/p2.jpg';
@@ -134,10 +136,10 @@ export const allItems: Item[] = [...projects, ...publications];
 
 /* ================= CERTIFICATE ================= */
 export const certificateCategories: { id: CertificateCategory; label: string; icon: string }[] = [
-  { id: 'all', label: 'Semua', icon: '🏆' },
-  { id: 'experience', label: 'Program & Experience', icon: '🚀' },
-  { id: 'design', label: 'Desain', icon: '🎨' },
-  { id: 'training', label: 'Training & Seminar', icon: '🎓' }
+  { id: 'all', label: 'All', icon: '🏆' },
+  { id: 'experience', label: 'Programs & Experience', icon: '🚀' },
+  { id: 'achievement', label: 'Achievements', icon: '🥇' },
+  { id: 'training', label: 'Training & Seminars', icon: '🎓' },
 ];
 
 export const certificates: Certificate[] = [
@@ -180,5 +182,21 @@ export const certificates: Certificate[] = [
     date: '2025',
     category: 'training',
     imageUrl: c5,
+  },
+  {
+    id: 'c6',
+    title: 'Cum Laude Graduation Certificate',
+    issuer: 'Universitas Malikussaleh',
+    date: '2025',
+    category: 'achievement',
+    imageUrl: c8,
+  },
+  {
+    id: 'c7',
+    title: 'Best IoT Project Award',
+    issuer: 'Universitas Malikussaleh',
+    date: '2024',
+    category: 'achievement',
+    imageUrl: c9,
   },
 ];

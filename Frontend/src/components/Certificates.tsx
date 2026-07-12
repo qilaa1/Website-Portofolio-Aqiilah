@@ -1,22 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useThemeStore } from '../store/theme';
 import { Certificate, CertificateCategory } from '../types/portfolio';
 import { certificates, certificateCategories } from '../data/portfolio';
 import React from 'react';
-
+import { PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 interface CertificateCardProps {
   certificate: Certificate;
   index: number;
+  onClick: () => void;
 }
 
 const CertificateCard = React.forwardRef<HTMLDivElement, CertificateCardProps>(
-  ({ certificate, index }, ref) => {
+  ({ certificate, index, onClick }, ref) => {
     const { isDark } = useThemeStore();
 
     return (
       <motion.div
-        ref={ref}
+    ref={ref}
+    onClick={onClick}
         layout
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -67,21 +70,40 @@ const CertificateCard = React.forwardRef<HTMLDivElement, CertificateCardProps>(
             {certificate.date}
           </div>
         </div>
+        
       </motion.div>
     );
   }
 );
 
 CertificateCard.displayName = "CertificateCard";
-
 export default function Certificates() {
   const { isDark } = useThemeStore();
-  const [activeCategory, setActiveCategory] = useState<CertificateCategory>('all');
 
-  const filteredCertificates = activeCategory === 'all'
-    ? certificates
-    : certificates.filter(cert => cert.category === activeCategory);
+  const [activeCategory, setActiveCategory] =
+    useState<CertificateCategory>('all');
 
+  const [selectedCertificate, setSelectedCertificate] =
+    useState<Certificate | null>(null);
+
+  useEffect(() => {
+    if (selectedCertificate) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedCertificate]);
+
+  const filteredCertificates =
+    activeCategory === 'all'
+      ? certificates
+      : certificates.filter(
+          cert => cert.category === activeCategory
+        );
   return (
     <section id="certificates" className="min-h-screen py-24 px-6 bg-gray-50 dark:bg-[#0f0f1a] transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
@@ -129,14 +151,64 @@ export default function Certificates() {
           <AnimatePresence mode="popLayout">
             {filteredCertificates.map((certificate, index) => (
               <CertificateCard
-                key={certificate.id}
-                certificate={certificate}
-                index={index}
+    key={certificate.id}
+    certificate={certificate}
+    index={index}
+    onClick={() => setSelectedCertificate(certificate)}
               />
             ))}
+            
           </AnimatePresence>
         </motion.div>
+        <AnimatePresence>
+  {selectedCertificate && (
+    <motion.div
+      className="fixed fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-center justify-center p-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setSelectedCertificate(null)}
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white dark:bg-[#1a1a2e] rounded-3xl max-w-5xl w-full overflow-hidden shadow-2xl"
+      >
+        <img
+          src={selectedCertificate.imageUrl}
+          alt={selectedCertificate.title}
+          className="w-full max-h-[75vh] object-contain bg-gray-100 dark:bg-[#0f0f1a]"
+        />
 
+        <div className="p-6">
+
+          <h2 className="text-2xl font-bold text-[#1a202c] dark:text-white">
+            {selectedCertificate.title}
+          </h2>
+
+          <p className="text-[#64748b] dark:text-gray-400 mt-2">
+            {selectedCertificate.issuer}
+          </p>
+
+          <p className="text-[#64748b] dark:text-gray-400">
+            {selectedCertificate.date}
+          </p>
+
+          <button
+            onClick={() => setSelectedCertificate(null)}
+            className="mt-6 bg-[#0066cc] text-white px-5 py-2 rounded-xl hover:bg-[#0052a3] transition"
+          >
+            Close
+          </button>
+
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
         {filteredCertificates.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-medium-image-zoom": "^5.4.8",
+    "react-photo-view": "^1.2.7"
+  }
+}

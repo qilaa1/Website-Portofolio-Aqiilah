@@ -36,7 +36,7 @@ export type Item = Project | Publication;
   export type CertificateCategory = 
     | 'all'
     | 'experience'
-    | 'design'
+    | 'achievement'
     | 'training';
   
 // 🔥 TYPE SKILL
