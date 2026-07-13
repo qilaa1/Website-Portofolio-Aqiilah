@@ -4,8 +4,6 @@ import { useThemeStore } from '../store/theme';
 import { Certificate, CertificateCategory } from '../types/portfolio';
 import { certificates, certificateCategories } from '../data/portfolio';
 import React from 'react';
-import { PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
 interface CertificateCardProps {
   certificate: Certificate;
   index: number;
