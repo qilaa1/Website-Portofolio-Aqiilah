@@ -19,6 +19,14 @@ import p2 from '../assets/project/p4.jpg';
 import c6 from '../assets/project/p3.jpg';
 import c7 from '../assets/project/p2.jpg';
 import p1 from '../assets/project/p1.pdf';
+import absensi from '../assets/project/absensi/absensi.jpeg';
+import absensi1 from '../assets/project/absensi/absensi1.jpeg';
+import absensi2 from '../assets/project/absensi/absensi2.jpeg';
+import absensi3 from '../assets/project/absensi/absensi3.jpeg';
+import absensi4 from '../assets/project/absensi/absensi4.jpeg';
+import fuzzy from '../assets/project/fuzzy/fuzzy.jpeg';
+import fuzzy2 from '../assets/project/fuzzy/fuzzy2.jpeg';
+import fuzzy3 from '../assets/project/fuzzy/fuzzy3.jpeg';
 
 
 /* ================= PERSONAL ================= */
@@ -79,6 +87,7 @@ export const projects: Project[] = [
     description:
       'An AI-powered TikTok automation bot that monitors comments and generates automated replies using BERT-based sentiment analysis.',
     thumbnail: c6,
+    images: [c6],
     videoEmbeds: ['https://www.youtube.com/embed/FO2tPbB5SUo'],
     technologies: ['Python', 'Selenium', 'JavaScript', 'BERT'],
     documentationUrl: 'https://github.com/qilaa1/Chatbot-Tiktok-',
@@ -97,6 +106,7 @@ export const projects: Project[] = [
     description:
       'Developed a custom web application for managing tree pruning activities around electricity distribution lines using the Right of Way (ROW) method. Built as a freelance client project with a focus on responsive UI and operational workflows.',
     thumbnail: p2,
+    images: [p2],
     technologies: [
       'React',
       'TypeScript',
@@ -109,6 +119,55 @@ export const projects: Project[] = [
       'CRUD Management',
       'Data Visualization',
       'Operational Workflow',
+    ],
+  },
+  {
+    id: 'project-3',
+    type: 'project',
+    types: 'Web',
+    title: 'Si Hadir – QR Attendance System',
+    description:
+      'Developed a web-based employee attendance system using one-time QR Code scanning and GPS radius validation. The system verifies attendance based on the registered location and device to support secure and efficient attendance management.',
+    thumbnail: absensi,
+    images: [absensi,absensi1,absensi2,absensi3,absensi4],
+    technologies: [
+      'PHP',
+      'MySQL',
+      'JavaScript',
+      'Bootstrap',
+      'QR Code',
+      'GPS',
+    ],
+    documentationUrl: '-',
+    features: [
+      'One-Time QR Code',
+      'GPS Radius Validation',
+      'Device Verification',
+      'Attendance Management',
+    ],
+  },
+  {
+    id: 'project-4',
+    type: 'project',
+    types: 'Web',
+    title: 'Fuzzy Instagram – Usage Intensity Prediction',
+    description:
+      'Developed a web-based fuzzy inference system using the Mamdani method to determine Instagram usage intensity based on usage duration and frequency. The system was built with PHP and MySQL using an MVC architecture and implemented fuzzy rules to process questionnaire data.',
+    thumbnail: fuzzy3,
+    images: [fuzzy,fuzzy2,fuzzy3],
+    technologies: [
+      'PHP',
+      'MySQL',
+      'Fuzzy Mamdani',
+      'MVC',
+      'Bootstrap',
+    ],
+    documentationUrl: '-',
+    features: [
+      'Fuzzy Mamdani Inference',
+      'Instagram Usage Analysis',
+      'Questionnaire Data Management',
+      'Fuzzy Rule Processing',
     ],
   },
 ];

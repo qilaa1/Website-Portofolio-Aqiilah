@@ -233,7 +233,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 bg-white dark:bg-[#2a2a4a] border border-gray-200 dark:border-gray-700 rounded-xl text-[#1a202c] dark:text-white placeholder-[#64748b] dark:placeholder-gray-500 focus:outline-none focus:border-[#0066cc] transition-colors resize-none"
-                  placeholder="Type Here..."
+                  placeholder="wType Here..."
                 />
               </div>
 

@@ -5,6 +5,7 @@ export interface Project {
   title: string;
   description: string;
   thumbnail: string;
+  images: string [];
   videoUrls?: string[];     // MP4 langsung
   videoEmbeds?: string[];   // YouTube iframe
   technologies: string[];
